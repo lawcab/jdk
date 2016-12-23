@@ -25,4 +25,5 @@ RUN wget https://download-cf.jetbrains.com/idea/ideaIC-2016.3.1.tar.gz \
 && mkdir /Programs \
 && tar xvzf ideaIC-2016.3.1.tar.gz -C /Programs \
 && cd /Programs \
-&& mv idea* idea
+&& mv idea* idea \
+&& mkdir /prj
