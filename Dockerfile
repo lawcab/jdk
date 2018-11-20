@@ -9,7 +9,7 @@ RUN ln -s /opt/firefox/firefox /usr/bin/firefox
 #install JDK
 RUN mkdir /usr/local/java \
 && cd /usr/local/java \
-&& wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u191-b12/jdk-8u191-linux-x64.tar.gz \
+&& wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/jdk-8u191-linux-x64.tar.gz \
 && tar xvzf jdk-8u191-linux-x64.tar.gz \
 && echo 'JAVA_HOME=/usr/local/java/jdk1.8.0_191' >> /etc/profile \
 && echo 'PATH=$PATH:$HOME/bin:$JAVA_HOME/bin' >> /etc/profile \
@@ -18,7 +18,6 @@ RUN mkdir /usr/local/java \
 RUN  update-alternatives --install "/usr/bin/java" "java" "/usr/local/java/jdk1.8.0_191/bin/java" 1 \
 && update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/local/java/jdk1.8.0_191/bin/javaws" 1 \
 && update-alternatives --set java /usr/local/java/jdk1.8.0_191/bin/java \
-&& update-alternatives --set javaws /usr/local/java/jdk1.8.0_191/bin/javaws
 
 #install IntelliJ
 RUN wget https://download-cf.jetbrains.com/idea/ideaIC-2018.2.6.tar.gz \
