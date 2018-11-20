@@ -17,7 +17,7 @@ RUN mkdir /usr/local/java \
 && echo 'export PATH' >> /etc/profile 
 RUN  update-alternatives --install "/usr/bin/java" "java" "/usr/local/java/jdk1.8.0_191/bin/java" 1 \
 && update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/local/java/jdk1.8.0_191/bin/javaws" 1 \
-&& update-alternatives --set java /usr/local/java/jdk1.8.0_191/bin/java \
+&& update-alternatives --set java /usr/local/java/jdk1.8.0_191/bin/java
 
 #install IntelliJ
 RUN wget https://download-cf.jetbrains.com/idea/ideaIC-2018.2.6.tar.gz \
